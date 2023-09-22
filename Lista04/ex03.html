@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+</head>
+
+<body>
+    <span>Nota 1:</span>
+    <input id="input_nota1"> <br>
+    <span>Nota 2:</span>
+    <input id="input_nota2"> <br>
+    <span>Nota 3:</span>
+    <input id="input_nota3"> <br>
+    <button onclick="desempenho ()">Analisar Desempenho</button>
+    <div id="divnota"></div>
+</body>
+
+</html>
+
+<script>
+    function desempenho() {
+        var nota1 = Number(input_nota1.value);
+        var nota2 = Number(input_nota2.value);
+        var nota3 = Number(input_nota3.value);
+        var medianota = ((nota1 + nota2 + nota3) / 3);
+
+        divnota.innerHTML = `Sua média foi de ${medianota}. <br>`
+
+        if (medianota > 9.5) {
+            divnota.innerHTML += ` Parabéns, você é fora de série!` }
+
+    }
+
+
+</script>
