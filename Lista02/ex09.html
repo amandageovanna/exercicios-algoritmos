@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio JS - Lista 02</title>
+</head>
+<body>
+    <h1> Exercicio 09</h1>
+    Qual foi sua nota na avaliação continuada? <input id="input_continuada"> <br>
+    Qual foi sua nota na avaliação semestral? <input id="input_semestral"> <br>
+    Qual seu nome? <input id="input_nome"> <br>
+
+    <button onclick="medianota()">Calcular média</button>
+
+</body>
+</html>
+
+<script>
+    function medianota() {
+       alert(`A média de ${input_nome.value} será de ${Number(input_continuada.value * 0.4) + Number(input_semestral.value * 0.6)}`)
+        };
+</script>    
+

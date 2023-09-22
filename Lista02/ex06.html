@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio JS - LISTA 02</title>
+</head>
+<body>
+    <h1>Exercicio 06</h1>
+    Qual é o valor da pizza? <input id="input_valor"> <br>
+    Em quantas pessoas a pizza será dividida? <input id="input_pessoas"> <br>
+    <button onclick="lovepizza()">#lovepizza</button>
+</body>
+</html>
+<script>
+    function lovepizza () {
+        alert (` Cada um dos ${input_pessoas.value} vai pagar R$${(input_valor.value / input_pessoas.value)},00.
+        `)
+    };
+</script>

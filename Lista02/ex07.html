@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio JS - Lista 02 </title>
+</head>
+<body>
+    <h1>Exercicio 07</h1>
+    Qual o valor original da passagem? <input id="input_passagemcheia"> <br>
+    Quantas viagens você fará por mês? <input id="input_viagensmes"> <br>
+    <button onclick="economia()">Ver economia</button>
+
+</body>
+</html>
+<script>
+    function economia() {
+        alert (`Você economizará R$${((input_passagemcheia.value * input_viagensmes.value) / 2)} por mês.
+        `)
+    };
+</script>
