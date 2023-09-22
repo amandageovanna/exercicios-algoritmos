@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+</head>
+<body>
+    <h1> Calculadora do sono </h1>
+    <span>Quantas horas de sono você dormiu? </span>
+    <input type="number" id="input_sono">
+    <button onclick="calculosono()">Calcular seu sono</button>
+    <div id="div_sono"></div>
+</body>
+
+</html>
+<script>
+    function calculosono() {
+        var qtdSono = Number(input_sono.value);
+        var fase1 = Number(0.50 * qtdSono);
+        var fase2 = Number(0.45 * qtdSono);
+        var fase3 = Number(0.30 * qtdSono);
+        var rem = Number(0.20 * qtdSono);
+
+    div_sono.innerHTML = `        
+    <br> Ao dormir <u>${input_sono.value}</u> horas, você dormiu: <br>
+    <u>${fase1}</u> horas na fase 1 <br>
+    <u>${fase2}</u> horas na <b>fase 2<b> <br>
+    <u>${fase3}</u> horas na <b>fase 3<b> <br>
+    <u>${rem}</u> horas na <b>fase<b> REM
+    `
+}
+
+</script>

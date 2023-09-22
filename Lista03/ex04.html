@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 04</title>
+</head>
+<body>
+    <h1>Todo mundo gosta de pizza!</h1>
+    <span>Qual o sabor da pizza?</span>
+    <input id="input_sabor"> <br>
+    <span>Qual o preço da pizza?</span>
+    <input type="number" id="input_price"> <br>
+    <span>Quantidade total de pessoas que vão comer: </span>
+    <input type="number" id="input_qtd">     
+    <button onclick="valoramigo()">Ver valor por amigo</button>    
+    <div id="divdapizza"></div>
+</body>
+</html>
+
+<script>
+    function valoramigo() { 
+        var saborpizza = (input_sabor.value);
+        var priceamigos = Number(input_price.value / input_qtd.value);
+        var caixinha = Number(0.10 * input_price.value)
+
+        divdapizza.innerHTML = ` 
+        <br> Cada amigo vai colaborar com R$${priceamigos + caixinha} para a pizza de ${saborpizza}, contando com o valor da caixinha do entregador.
+    `}
+</script>

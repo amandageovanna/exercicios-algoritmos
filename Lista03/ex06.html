@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Guerreiros Sayajins</h1>
+    <span>Qual é o KI base do guerreiro Sayajin?</span>
+    <input id="input_kibase"> <br>
+    <span> Transformar em...</span> 
+    <button onclick="ssj1()">SSJ</button> 
+    <button onclick="ssj2()">SSJ2</button>
+    <button onclick="ssj3()">SSJ3</button>
+    <div id="divki"></div>
+</body>
+</html>
+<script>
+
+   function ssj1() { 
+   var kibase = Number(input_kibase.value)
+   var novoki1 = kibase * 50 
+
+   divki.innerHTML = `Após se transformar em SSJ1, o ki desse Sayajin passa a ser de ${novoki1} `
+   }
+
+   function ssj2() {
+    var kibase = Number(input_kibase.value)
+    var novoki2 = kibase * 100 
+
+   divki.innerHTML = `Após se transformar em SSJ2, o ki desse Sayajin passa a ser de ${novoki2} `
+   }
+
+   function ssj3() {
+   var kibase = Number(input_kibase.value)
+   var novoki3 = kibase * 200 
+
+   divki.innerHTML = `Após se transformar em SSJ3, o ki desse Sayajin passa a ser de ${novoki3} `
+
+   }
+
+</script>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+</head>
+<body>
+    <h1> Programa de votação</h1>
+    <span>Quantidade de votos que o "Candidato A" teve na eleição: </span>
+    <input type="number" id="input_a"> <br>
+    <span>Quantidade de votos que o "Candidato B" teve na eleição: </span>
+    <input type="number" id="input_b"> <br>
+    <span>Quantidade de votos brancos que houveram na eleição</span>
+    <input type="number" id="input_branco"> <br>
+    <span>Quantidade de votos nulos que houveram na eleição</span>
+    <input type="number" id="input_nulo">
+    <button onclick="resultado()">Resultado da Eleição</button>
+    <div id="div_eleicao" ></div>
+
+</body>
+</html>
+
+<script>
+    function resultado() {
+   var candidatoA = Number(input_a.value);
+   var candidatoB = Number(input_b.value);
+   var brancos = Number(input_branco.value);
+   var nulo = Number(input_nulo.value);
+   var qtdtotal = Number(candidatoA + candidatoB + brancos + nulo)
+   var porcentagem1 = Number(candidatoA / qtdtotal) * 100
+   var porcentagem2 = Number(candidatoB / qtdtotal) * 100
+   var invalidos = Number(brancos + nulo)
+   var porcinvalidos = Number(invalidos / qtdtotal) * 100
+
+    div_eleicao.innerHTML = `
+    <br> Total de votos: ${qtdtotal} <br> 
+    Candidato A: ${porcentagem1}% (${candidatoA} votos) <br>
+    Candidato B: ${porcentagem2}% (${candidatoB} votos) <br>
+    Inválidos: ${porcinvalidos}% (${invalidos} votos) <br>
+    `}
+</script>
