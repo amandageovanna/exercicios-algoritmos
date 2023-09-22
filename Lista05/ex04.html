@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <span> Qual a frequência do aluno? </span>
+    <input type="number" id="input_frq">
+    <button onclick="analisar()">Analisar Frequência</button>
+    <div id="div_imagem"></div>
+</body>
+
+</html>
+
+<script>
+    function analisar() {
+        var frequencia = Number(input_frq.value)
+
+        if (frequencia > 50) {
+            div_imagem.innerHTML = `
+            <img src="https://3.bp.blogspot.com/-CacavTf2kos/Tp7HQ5VlF3I/AAAAAAAAAAk/JDOm8Z61GDo/s1600/Aluno"/>           `
+        } else {
+            div_imagem.innerHTML = `          
+           <img width="300" height="300" src="https://rduirapuru.com.br/wp-content/uploads/2023/06/visto-de-turista-eua-imigrefacil.jpg"/>
+           `
+        }
+    }
+</script>

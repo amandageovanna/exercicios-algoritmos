@@ -1,0 +1,31 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 07</title>
+</head>
+
+<body>
+    <h1>Bem vindo a cidade de Algoritmolândia!</h1>
+    <span>Qual a quantidade de KWh consumida no mês?</span>
+    <input type="number" id="input_qtd">
+    <button onclick="calcular()">Calcular conta de luz</button>
+    
+</body>
+
+</html>
+
+<script>
+    function calcular() {
+        var quantidadeKWh = Number(input_qtd.value);
+        var valorTotal = Number(quantidadeKWh * 0.85);
+        var desconto = Number(valorTotal * 0.10);
+        var valorDesconto = Number(valorTotal - desconto);
+
+        if (quantidadeKWh >= 100) {
+            alert(`O valor a ser pago será de R$${valorTotal}`)
+        } else {
+            alert(`Parabéns! Você ganhou 10% de desconto. O valor a ser pago será de R$${valorDesconto}"`)
+        }
+
+    }
+</script>

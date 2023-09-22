@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Sua idade vampírica</h1>
+    Qual sua idade?
+    <input id="input_idade">
+    <button onclick="determinar()">Idade vampírica</button>
+    <div id="div_msg"></div>
+</body>
+
+</html>
+
+<script>
+    function determinar() {
+        var idadereal = Number(input_idade.value)
+        var idadevampirica = idadereal * 2
+        
+        if (idadereal >= 18) {
+            div_msg.innerHTML = `<br> Sua idade vampírica é de ${idadevampirica}`
+        } else {
+            div_msg.innerHTML = `<br> Sua idade vampírica é de ${idadereal}`
+        } 
+        
+        if (idadevampirica >= 50) {
+          div_msg.innerHTML += `<br> Você é um vampiro experiente!!` 
+          } else {
+          div_msg.innerHTML += `<br> Você é um vampiro novato!`
+     } 
+
+     
+     
+    }
+</script>

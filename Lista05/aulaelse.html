@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a primeira nota:
+    <input type="number" min="0" max="10" id="input_nota1"> <br>
+    Insira a segunda nota:
+    <input type="number" min="0" max="10" id="input_nota2"> <br>
+    <button onclick="calcular()">Calcular média</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var nota1 = Number(input_nota1.value) ;
+        var nota2 = Number(input_nota2.value);
+        var media = Number(nota1 + nota2) / 2;
+      
+        
+        if (media >=6) { 
+            div_mensagem.innerHTML = `Aprovado! `
+         } else {
+            div_mensagem.innerHTML = `Reprovado! `
+         } 
+    }
+</script>
