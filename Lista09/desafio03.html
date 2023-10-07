@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="color: rgb(0, 140, 255);">
+        Total guardado no cofrinho: R$<u><span id="span_total">0</span></u> <br>
+        Depósitos efetuados: <u><span id="span_depositos">0</span></u> <br>
+        Retiradas efetuadas: <u><span id="span_saques">0</span></u> <br>
+    </div>
+    <button onclick="depositarCin()">Depositar 0,50</button>
+    <button onclick="depositarDois()">Depositar 2,00</button>
+    <button onclick="retirarCin()">Retirar 0,50</button>
+    <span>Retirada personalizada:</span> 
+    <input type="number" id="input_retirada_pers">
+    <button onclick="retirar()">Retirar</button> <br>
+</body>
+</html>
+
+<script>
+
+var grana = Number(span_total.innerHTML)
+var depositos = Number(span_depositos.innerHTML)
+var retiradas = Number(span_saques.innerHTML)
+    
+function depositarCin(){  
+grana = Number(span_total.innerHTML)
+span_total.innerHTML =  grana + 0.50
+depositos = Number(span_depositos.innerHTML)
+span_depositos.innerHTML = depositos + 1
+}
+
+function depositarDois(){
+grana = Number(span_total.innerHTML)
+span_total.innerHTML =  grana + 2
+depositos = Number(span_depositos.innerHTML)
+span_depositos.innerHTML = depositos + 1  
+}
+
+function retirarCin(){
+grana = Number(span_total.innerHTML)
+span_total.innerHTML =  grana - 0.50
+retiradas = Number(span_saques.innerHTML)
+span_saques.innerHTML = retiradas + 1    
+}
+
+function retirar(){
+var retirada_pers = Number(input_retirada_pers.value)
+grana = Number(span_total.innerHTML)
+span_total.innerHTML =  grana - retirada_pers
+retiradas = Number(span_saques.innerHTML)
+span_saques.innerHTML = retiradas + 1  
+}
+
+</script>

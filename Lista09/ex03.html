@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 03 - lista 09</title>
+</head>
+
+<body>
+    <h1>Tio Patinhas</h1>
+    <div style="color: blue;">
+        Total guardado no cofrinho: R$<u><span id="spanTotalCofre">0</span></u>
+        <br>
+        Depósitos efetuados: <u><span id="spanDepositos">0</span></u>
+        <br>
+        Retiradas efetuadas: <u><span id="spanRetiradas">0</span></u>
+    </div>
+    <button onclick="depositar050()">Depositar 0,50</button>
+    <button onclick="depositar02()">Depositar 2,00</button>
+    <button onclick="retirar050()">Retirar 0,50</button> <br> <br>
+    Insira o valor a ser retirado: 
+    <input id="input_retiradaPersonalizada">
+    <button onclick="retirar()">Retirada</button>
+</body>
+
+</html>
+
+<script>
+    var dinheiro = 0;
+    var depositoEfetuado = 0;
+    var retiradaEfetuada = 0;
+
+    function depositar050() {
+         dinheiro += 0.50;
+         depositoEfetuado += 1;
+
+        spanTotalCofre.innerHTML = dinheiro;
+        spanDepositos.innerHTML = depositoEfetuado;
+    }
+
+    function depositar02() {
+         dinheiro += 2;
+         depositoEfetuado += 1; 
+
+         spanTotalCofre.innerHTML = dinheiro;
+         spanDepositos.innerHTML = depositoEfetuado;
+    }
+
+    function retirar050() {
+        dinheiro -= 0.50;
+        retiradaEfetuada += 1;  
+
+        spanTotalCofre.innerHTML = dinheiro;
+        spanRetiradas.innerHTML = retiradaEfetuada;
+    }
+
+   function retirar() {
+       var retiradaPers = Number(input_retiradaPersonalizada.value);
+
+       dinheiro -= retiradaPers;
+       retiradaEfetuada += 1;
+
+       spanTotalCofre.innerHTML = dinheiro;
+       spanRetiradas.innerHTML = retiradaEfetuada;
+      
+   }
+</script>
