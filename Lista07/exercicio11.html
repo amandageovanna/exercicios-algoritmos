@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Programa de cartão fidelidade</h1>
+  <span>Qual a quantidade de passagens que deseja adquirir?</span>
+  <input id="input_qtdPassagem">
+  <button onclick="comprar()">Comprar</button>
+  <div id="div_msg"></div>
+
+</body>
+
+</html>
+
+<script>
+  function comprar() {
+    var qtdPassagem = Number(input_qtdPassagem.value);    
+    var valorFinal = qtdPassagem * 4.40;
+    var desconto3 = valorFinal * 0.03;
+    var desconto5 = valorFinal * 0.05;
+    var desconto7 = valorFinal * 0.07;
+ 
+    if (qtdPassagem >= 8 && qtdPassagem <= 50) {
+      if (qtdPassagem >= 8 && qtdPassagem <= 19) {   
+        valorFinal = valorFinal - desconto3     
+        div_msg.innerHTML = `Total a pagar: R$${valorFinal}`;
+      } else if (qtdPassagem >= 20 && qtdPassagem <= 49) {
+        valorFinal = valorFinal - desconto5
+        div_msg.innerHTML = `Total a pagar: R$${valorFinal}`;
+      } else if (qtdPassagem == 50) {
+        valorFinal = valorFinal - desconto7
+        div_msg.innerHTML = `Total a pagar: R$${valorFinal}`;
+      } 
+    } else {
+        alert(`Quantidade inválida para o Fidelidade!`);
+      }
+  }
+</script>
