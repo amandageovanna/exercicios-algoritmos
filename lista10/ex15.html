@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Qual a quantidade de elefantes? <input id="qtdElefantes">
+    <button onclick="atazanar()">Atazanar a médium</button>
+    <div id="divmsg"> </div>
+</body>
+
+</html>
+
+<script>
+    function atazanar() {
+        var numElefante = Number(qtdElefantes.value);
+        var contador = 2;
+        var incomodam = "incomodam";
+
+        divmsg.innerHTML = ""
+
+        while (contador <= numElefante) {
+            if (contador == 1) {
+                divmsg.innerHTML += `1 elefante incomoda muita gente! <br>`
+            } else {
+                divmsg.innerHTML += `1 elefante incomoda muita gente! <br>`
+                incomodam += ", incomodam";
+                divmsg.innerHTML += `${contador} elefantes, ${incomodam} muito mais! <br>`;
+               
+            }
+            contador += 1;
+
+        }
+
+
+    }
+
+</script>

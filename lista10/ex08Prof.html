@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+   <input id="input_numero">
+    <button onclick="mostrar()">Viva o 7!</button>
+    <div id="resulta"></div>
+</body>
+
+</html>
+
+<script>
+    function mostrar() {
+
+        resulta.innerHTML = ``
+
+        var numero_usuario = Number(input_numero.value)
+        var contador = 0;
+
+        while (contador <= numero_usuario) {
+
+            resulta.innerHTML += `${contador} <br>`
+
+            contador += 7
+        }
+
+    }
+    
+
+    </script>

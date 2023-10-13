@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Quantas pessoas vão entrar no carro?
+    <input id="inpt_carona"> <br>
+    Qual é a capacidade de passageiros que o carro comporta?
+    <input id="inpt_capacidade">
+    <button onclick="caroninha()">#Partiu Carona</button>
+    <div id="divcar"></div>
+</body>
+
+</html>
+
+<script>
+    function caroninha() {
+        var pessoas = Number(inpt_carona.value);
+        var capacidade = Number(inpt_capacidade.value);
+        var contador = 1;
+        divcar.innerHTML = ""
+
+        while (contador <= pessoas) {
+            if (contador > capacidade) {
+                divcar.innerHTML += `O ${contador} passageiro terá que esperar! <br> `
+            } else {divcar.innerHTML += `Entrou o ${contador} passageiro <br> ` }
+            
+            contador ++
+        }
+
+    }
+
+</script>

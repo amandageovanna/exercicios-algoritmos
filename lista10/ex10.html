@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Me dê um intervalo crescente de valores numéricos:
+    <input id="input_intervalo">
+    <button onclick="s2pares()">s2 pares</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<script>
+    function s2pares() {
+        var pares = Number(input_intervalo.value);
+        contador = 1;
+        div_msg.innerHTML = ""
+
+        while (contador <= pares) {
+            if (contador % 2 == 0 ) { 
+                div_msg.innerHTML += `${contador} `
+            }
+
+            contador ++
+        }
+        
+
+    }
+</script>

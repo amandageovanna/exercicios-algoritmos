@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="dizer()">Diga algo sobre a matéria de Algoritmos</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<script>
+    function dizer() {
+        var dizendo = 1;
+        div_msg.innerHTML = ""
+        while (dizendo <= 7) {
+            div_msg.innerHTML += ` <br> ${dizendo} Tenho um pouco de dificuldade, mas bom você se torna, porque o sucesso vem daquilo que você faz constantemente. <br>`
+            dizendo += 1;
+        }
+
+
+    }
+</script>

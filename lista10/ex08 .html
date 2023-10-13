@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Diga um número entre 0 e 200
+    <input id="input_num">
+    <button onclick="viva()">Viva o 7!</button>
+    <div id="divmsg"></div>
+</body>
+
+</html>
+
+<script>
+    function viva() {
+        var num = Number(input_num.value)
+        var contador = 0
+        divmsg.innerHTML = ""
+
+        while (contador <= num) {      
+            if (contador % 7 == 0)     
+            divmsg.innerHTML += `${contador} <br>`
+            contador += 1;
+        }
+
+    }
+</script>

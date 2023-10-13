@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Quantas coca-colas você acha que já bebeu na vida?
+    <input id="inpt_cocas">
+    <button onclick="quantidade()">ver a quantidade</button>
+    <div id="divcoquinhas"> </div>
+    
+</body>
+
+</html>
+
+<script>
+    function quantidade() {
+        var cocas = Number(inpt_cocas.value);
+        var contador = 0;
+
+        divcoquinhas.innerHTML = ""
+
+        while (contador < cocas) {
+            divcoquinhas.innerHTML += `<img src="14138703.jpg" height="300" width="300">`
+            contador ++
+        }
+
+    }
+</script>

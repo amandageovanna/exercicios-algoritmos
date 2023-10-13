@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual a tabuada você quer? 
+    <input id="inpt_tbd"> <br>
+    Até qual número a tabuada deve ir? 
+    <input id="inpt_max">
+    <button onclick="ver()">ver tabuada</button>
+ <div id="divtabu"></div>
+</body>
+</html>
+</span>
+
+<script>
+    function ver() { 
+        var tabuada = Number(inpt_tbd.value)
+        var max = Number(inpt_max.value)
+        var contador = 1
+        
+        divtabu.innerHTML = ""
+
+        while (contador <= max) { 
+            var resultado = tabuada * contador            
+            if (resultado % 2 == 0) {                 
+                divtabu.innerHTML += `<span style= "color: blue">${tabuada} x ${contador} = ${resultado}</span>  <br>`
+            } else if (resultado % 2 == 1) {
+                divtabu.innerHTML += `<span style= "color: red">${tabuada} x ${contador} =  ${resultado}</span> <br>`
+            }
+            
+       contador ++
+
+        }
+        
+    } 
+</script>

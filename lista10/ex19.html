@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    
+    Quantas xícaras de café com leite já você já tomou?
+    <input type="text" id="input_xicaras">
+    <button onclick="quantidade()">ver a quantidade</button>
+<div id="divCafe"></div>
+</body>
+
+</html>
+
+<script>
+    function quantidade() {
+        var qtd = Number(input_xicaras.value)
+        contador = 1;
+
+        while(contador <= qtd) {         
+         divCafe.innerHTML += `<img src="colher-carregando-punhado-de-leite-em-po-sobre-fundo-branco.jpg" height="300" width="400">
+         <img src="blogger-image--1751233207.jpg" height="300" width="400">
+         <img src="blogger-image--1751233207.jpg" height="300" width="400"><br>`
+            contador ++
+        }
+    }
+</script>
