@@ -9,7 +9,7 @@
 
 <body>
     Quantos depósitos você fez no banco?
-    <input id="inpt_banco">
+    <input id="inpt_banco"> <br>
     Qual o valor de cada depósito?
     <input id="inpt_valor">
     <button onclick="acompanhar()">Acompanhar grana</button>
@@ -19,15 +19,22 @@
 </html>
 <script>
     function acompanhar() {
-        var qntDeposito = Number(inpt_banco.value);
-        var valorDeposito = Number(inpt_valor.value);
+        var qntdDeposito = Number(inpt_banco.value);
+        var valorDeposito = Number(inpt_valor.value);          
+        var totalDep = valorDeposito * qntdDeposito
+        var valorMes = 0
+        divmes.innerHTML = ""
         contador = 1;
 
-        while () {
-            divmes.innerHTML = `${contador} Mês: R$ `
+        while (valorMes < totalDep || contador < qntdDeposito) {
+            valorMes += valorDeposito;
+            divmes.innerHTML += `${contador} Mês: R$${valorMes} <br>`
+            contador++
+
         }
 
-        contador++;
+
+
 
     }
 </script>
