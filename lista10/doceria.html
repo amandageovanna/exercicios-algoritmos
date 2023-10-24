@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1>Doceria Gourmet</h1>
+    Quantidade de Macarons:
+    <input id="input_qtdMacarons"> <br>
+    Quantidade de Brigadeiros:
+    <input id="input_qtdBrigadeiros"> <br>
+    Quantidade de Gourmets:
+    <input id="input_qtdGourmets"> <br>
+    Quantidade de Cupcakes:
+    <input id="input_qtdCupcakes"> <br>
+    Quantidade de Cheesecakes:
+    <input id="input_qtdCheesecakes"> <br>
+    <br><br>
+    Preço da unidade de Macarons:
+    <input id="input_precoMacarons"> <br>
+    Preço da unidade de Brigadeiros:
+    <input id="input_precoBrigadeiros"> <br>
+    Preço da unidade de Gourmets:
+    <input id="input_precoGourmets"> <br>
+    Preço da unidade de Cupcakes:
+    <input id="input_precoCupcakes"> <br>
+    Preço da unidade de Cheesecakes:
+    <input id="input_precoCheesecakes"> <br>
+
+    <button onclick="verificar()">Verificar Vendas</button>
+
+    <div id="mensagem"></div>
+</body>
+
+</html>
+
+<script>
+    function verificar() {
+        var precoMacarons = Number(input_precoMacarons.value);
+        var precoBrigadeiro = Number(input_precoBrigadeiros.value);
+        var precoGourmets = Number(input_precoGourmets.value);
+        var precoCupcakes = Number(input_precoCupcakes.value);
+        var precoCheesecakes = Number(input_precoCheesecakes.value);
+
+        var qtdMacarons = Number(input_qtdMacarons.value);
+        var qtdBrigadeiro = Number(input_qtdBrigadeiros.value);
+        var qtdGourmets = Number(input_qtdGourmets.value);
+        var qtdCupcakes = Number(input_qtdCupcakes.value);
+        var qtdCheesecakes = Number(input_qtdCheesecakes.value);
+
+        var contadorMacarons = 1;
+        var contadorBrigadeiro = 0;
+        var contadorGourmets = 0;
+        var contadorCupcakes = 0;
+        var contadorCheesecakes = 0;
+
+        var precoTotalMacarons = 0;
+        var precoTotalBrigadeiro = 0;
+        var precoTotalGourmets = 0; 
+        var precoTotalCupcakes = 0;
+        var precoTotalCheesecakes = 0;
+
+
+        mensagem.innerHTML = ""
+
+        if (qtdMacarons < 0 || qtdBrigadeiro < 0 || qtdGourmets < 0 || qtdCupcakes < 0 || qtdCheesecakes < 0 || precoMacarons < 0 || precoBrigadeiro < 0 || precoGourmets < 0 || qtdCupcakes < 0 || precoCheesecakes < 0) {
+            alert(`ERRO! Insira um número válido maior ou igual a 0`)
+        } else {
+            mensagem.innerHTML += `<br> NÚMERO DA VENDA  - IMAGEM DO DOCE -  R$ VALOR UNITÁRIO`
+
+            while (contadorMacarons <= qtdMacarons) {
+                mensagem.innerHTML += `<br> ${contadorMacarons} - <img src="macarons.webp" height="100px" width="100px"> - R$${precoMacarons} `
+                contadorMacarons++;                
+                  if (contadorMacarons == qtdMacarons) { 
+                    
+                    precoTotalMacarons = (contadorMacarons * precoMacarons)}
+            }
+
+            while (contadorBrigadeiro < qtdBrigadeiro) {
+                mensagem.innerHTML += `<br> ${contadorMacarons + contadorBrigadeiro} - <img src="brigadeiro.webp" height="100px" width="100px"> - R$${precoBrigadeiro} `
+                contadorBrigadeiro++;
+                precoTotalBrigadeiro = contadorBrigadeiro * precoBrigadeiro;
+            }
+
+            while (contadorGourmets < qtdGourmets) {
+                mensagem.innerHTML += `<br> ${contadorGourmets + contadorMacarons + contadorBrigadeiro} - <img src="gourmets.jpg" height="100px" width="100px"> - R$${precoGourmets} `
+                contadorGourmets++;
+                precoTotalGourmets = contadorGourmets * precoGourmets;
+            }
+
+            while (contadorCupcakes < qtdCupcakes) {
+                mensagem.innerHTML += `<br> ${contadorCupcakes + contadorGourmets + contadorMacarons + contadorBrigadeiro} - <img src="cupcake.png" height="100px" width="100px"> - R$${precoCupcakes} `
+                contadorCupcakes++;
+                precoTotalCupcakes = contadorCupcakes * precoCupcakes;
+            }
+
+            while (contadorCheesecakes < qtdCheesecakes) {
+                mensagem.innerHTML += `<br> ${contadorCheesecakes + contadorCupcakes + contadorGourmets + contadorMacarons + contadorBrigadeiro} - <img src="cheesecake.png" height="100px" width="100px"> - R$${precoCheesecakes} `
+                contadorCheesecakes++;
+                precoTotalCheesecakes = contadorCheesecakes * precoCheesecakes;
+            }
+
+            var precoTotal = precoTotalCheesecakes + precoTotalCupcakes + precoTotalGourmets + precoTotalBrigadeiro + precoTotalMacarons;
+
+            mensagem.innerHTML += `<br> <br> Com a quantidade de ${qtdMacarons} Macarons, ${qtdBrigadeiro} Brigadeiros, ${qtdGourmets} Cupcakes e ${qtdCheesecakes} Cheesecakes, a venda totalizará R$${precoTotal}`
+
+
+
+        }
+
+    }
+</script>
