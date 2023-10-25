@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Limite inferior da amostragem:
+    <input id="input_inferior"> <br>
+
+    Limite superior da amostragem:
+    <input id="input_superior"> <br>
+
+    Número para testar a divisibilidade:
+    <input id="input_divisibilidade"><br>
+    <button onclick="contar()"> Contar </button>
+    <div id="mensagem"></div>
+</body>
+
+</html>
+
+<script>
+    function contar() {
+        var limiteInferior = Number(input_inferior.value);
+        var limiteSuperior = Number(input_superior.value);
+        var divisibilidade = Number(input_divisibilidade.value);
+        var contadora = 0;
+        var numerosTotais = 0;
+        var ;
+        
+        mensagem.innerHTML = ""
+
+        if (limiteInferior > 1 && limiteSuperior < 100 && limiteSuperior > limiteInferior && divisibilidade >= 3 && divisibilidade <= 10) {
+
+        
+            while (limiteInferior <= limiteSuperior) {
+                if (limiteInferior % divisibilidade == 0) {
+                mensagem.innerHTML += `${limiteInferior},`
+                numerosTotais++;      
+                }
+
+              limiteInferior++;                          
+            }
+
+            mensagem.innerHTML += `<br> 
+             <br> 
+             QUANTIDADE TOTAL DE NÚMEROS EXIBIDOS: ${numerosTotais} 
+             <br> 
+             SOMATÓRIO DOS NÚMEROS EXIBIDOS: ${}
+             <br> 
+             MÉDIA DOS NÚMEROS EXIBIDOS: 
+             <br> 
+             MAIOR NÚMERO EXIBIDO:   
+             <br> 
+             MENOR NÚMERO EXIBIDO:  `
+
+
+
+        } else {
+            alert(`ERRO! Insira números válidos dentro do parâmetro abaixo: 
+             Limite inferior da amostragem: Número que ser maior que 1.             
+             Limite superior da amostragem: Número que ser menor que 100 e maior que o limite inferior inserido.               
+            Número para testar a divisibilidade: Número tem que estar entre 3 e 10.
+          `)
+        }
+    }
+</script>
