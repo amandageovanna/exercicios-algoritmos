@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="Digite os nomes dos filmes" id="input_nomesFilmes">
+
+    <button onclick="cadastrar()">Cadastrar filme</button> <br>
+    <button onclick="favoritos()">Ver favoritos</button>
+    <div id="mensagem"></div>
+</body>
+
+</html>
+
+<script>
+    var nomesFilmes = []
+    var qtdFilmes
+    function cadastrar() {
+        nomesFilmes.push(input_nomesFilmes.value)
+    }
+
+    function favoritos() {
+        qtdFilmes = nomesFilmes.length
+        mensagem.innerHTML = ""
+
+        for (pos = 0; pos < qtdFilmes; pos++) {
+            mensagem.innerHTML += `${nomesFilmes[pos]} <br>`
+        }
+
+        if (pos == qtdFilmes) {
+            mensagem.innerHTML += `Total: ${qtdFilmes} <br>`
+        }
+
+        var filmeFavorito = nomesFilmes[0]
+        var filmeMenosGosta = nomesFilmes[nomesFilmes.length - 1]    // significa acessar o elemento no índice que é igual ao comprimento da lista menos 1. Como os índices em arrays em JavaScript começam em 0, o último elemento estará sempre no índice comprimento da lista - 1.
+     
+        mensagem.innerHTML += `O filme que mais gosta é ${filmeFavorito} <br> `
+
+        mensagem.innerHTML += `O filme que menos gosta é ${filmeMenosGosta} <br>`
+
+    }
+
+</script>
