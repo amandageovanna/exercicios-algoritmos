@@ -20,18 +20,19 @@
 
     function cadastrar() {
         filmes.push(input_filmesFav.value);
-        mensagem.innerHTML = ""
 
         for (var posicao = 0; posicao <= filmes.length - 1; posicao++) {
             mensagem.innerHTML = ""
             var filme3Favorito = filmes[2] 
 
             mensagem.innerHTML += ` Seu filme favorito: ${filmes[0]} <br>`
-            if (posicao == 2) {              
+
+            if (posicao >= 2) {              
                 mensagem.innerHTML += ` Seu 3º filme favorito:  ${filme3Favorito} <br> `
             } else {
                 mensagem.innerHTML += ` Seu 3º filme favorito:  Ainda não existe <br> `
             }
+            
             mensagem.innerHTML += `
             Total de filmes cadastrados: ${filmes.length} `
 
