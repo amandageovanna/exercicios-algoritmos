@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Nome do aluno: <input id="input_nome">
+
+    <button onclick="cadastrar()">Cadastrar</button>
+    <div id="mensagem"></div>
+
+</body>
+
+</html>
+
+<script>    
+    var aluno = []   
+
+    function cadastrar() {
+        aluno.push(input_nome.value);
+        mensagem.innerHTML = ""       
+        tamanho = aluno.length - 1
+        for (var posicao = tamanho; posicao >= 0; posicao--) {
+            mensagem.innerHTML += `${aluno[posicao]} <br>`
+        }
+
+    }
+    // O ''tamanho = aluno.length - 1'' acessa o ultimo elemento do vetor/aray aluno. 
+    // O raciocinio é: a variável posicao começa com o valor do indice do ultimo elemento no array aluno(o mais recente). O loop continuará enquanto a posição for maior ou igual a 0, ou seja, vai rodar até que a posicao seja menor que zero. A cada vez que esse loop roda, a posicao é reduzida em 1, isso significa que estamos indo do último elemento do array para o primeiro.
+</script>
