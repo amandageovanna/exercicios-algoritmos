@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Insira seus filmes favoritos: <input id="input_filmesFav">
+    <button onclick="cadastrar()">Cadastrar filme</button>
+    <div id="mensagem"></div>
+  
+</body>
+
+</html>
+
+<script>
+    var filmes = []
+
+    function cadastrar() {
+        filmes.push(input_filmesFav.value)
+        mensagem.innerHTML = ""
+              
+        
+
+        for (var pos = 0; pos <= filmes.length - 1; pos++) {
+            if (pos % 2 == 0) {
+                mensagem.innerHTML += `<span style="color: blue;">${filmes[pos]}</span><br>`
+            } else if (pos % 2 == 1) {
+                mensagem.innerHTML += `<span style="color: red;">${filmes[pos]}</span><br>`
+            }           
+
+        }
+    }
+
+</script>
