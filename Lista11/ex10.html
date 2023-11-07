@@ -15,7 +15,6 @@
     <button onclick="pesquisar()">Pesquisar</button>
     <div id="mensagem"></div>
     <div id="mensagem2"></div>
-    <div id="mensagem3"></div>
 </body>
 
 </html>
@@ -23,7 +22,8 @@
 <script>
     var onibus = []
     var pesquisa
-    
+
+
 
     function Gravar() {
         onibus.push(input_onibus.value);
@@ -44,26 +44,25 @@
         pesquisa = input_pesquisa.value;
         tamanho = onibus.length
         i = 0;
-        quantasVezes = 0;        
-        
+        quantasVezes = 0;
+        var quaisVezes = []
 
         while (i < tamanho) {
             if (pesquisa == onibus[i]) {
-                quantasVezes++;       
-                quaisVezes.push(quaisVezes);
+                quantasVezes++;
+                quaisVezes.push(i + 1); // i + 1 representa a ordem em que a linha foi registrada
+                mensagem2.innerHTML = `Você já pegou essa linha ${quantasVezes} vezes, nessa ordem: ${quaisVezes}`
 
-                mensagem2.innerHTML = `Você já pegou essa linha ${quantasVezes} vezes, nessa ordem:`
-                mensagem3.innerHTML += `${quaisVezes},`                     
-               
             }
-           
+
             i++;
         }
-        
+
         if (i >= tamanho && pesquisa == onibus[i]) {
             mensagem2.innerHTML = `Você não pegou essa linha`
-            
+
         }
     }
+    //se você pegou a linha de ônibus pela primeira vez, i será igual a 0, e i + 1 será igual a 1, indicando que a linha foi registrada como a primeira que você pegou. Se você pegou a mesma linha de ônibus novamente mais tarde, a ordem será 2, 3, e assim por diante, conforme você a registra mais vezes.
 
 </script>
