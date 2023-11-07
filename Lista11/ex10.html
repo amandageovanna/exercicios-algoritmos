@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Nomes das linhas de ônibus:
+    <input id="input_onibus">
+    <button onclick="Gravar()">Gravar busão</button> <br>
+    Pesquise: <input id="input_pesquisa">
+    <button onclick="pesquisar()">Pesquisar</button>
+    <div id="mensagem"></div>
+    <div id="mensagem2"></div>
+    <div id="mensagem3"></div>
+</body>
+
+</html>
+
+<script>
+    var onibus = []
+    var pesquisa
+    
+
+    function Gravar() {
+        onibus.push(input_onibus.value);
+        tamanho = onibus.length - 1
+        mensagem.innerHTML = ""
+
+
+
+        for (var i = tamanho; i >= 0; i--) {
+            mensagem.innerHTML += `${onibus[i]} <br>`
+        }
+
+
+    }
+
+    function pesquisar() {
+        mensagem2.innerHTML = ""
+        pesquisa = input_pesquisa.value;
+        tamanho = onibus.length
+        i = 0;
+        quantasVezes = 0;        
+        
+
+        while (i < tamanho) {
+            if (pesquisa == onibus[i]) {
+                quantasVezes++;       
+                quaisVezes.push(quaisVezes);
+
+                mensagem2.innerHTML = `Você já pegou essa linha ${quantasVezes} vezes, nessa ordem:`
+                mensagem3.innerHTML += `${quaisVezes},`                     
+               
+            }
+           
+            i++;
+        }
+        
+        if (i >= tamanho && pesquisa == onibus[i]) {
+            mensagem2.innerHTML = `Você não pegou essa linha`
+            
+        }
+    }
+
+</script>
