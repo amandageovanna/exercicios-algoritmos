@@ -11,9 +11,10 @@
     Nome de cada projeto que já criou na vida:
     <input id="input_nomeProjeto">
     <button onclick="registrar()">Registrar projeto</button>
+    <button onclick="mostrar()">Mostrar projetos</button>
     <div id="mensagem"></div>
     <div id="mensagem1"></div>
-    <button onclick="mostrar()">Mostrar projetos</button>
+    
 </body>
 
 </html>
@@ -45,5 +46,6 @@
         for (var i = tamanho; i >= 0; i--) {
             mensagem1.innerHTML += `${projeto[i]} <br>`
         }
+       
     }
 </script>
