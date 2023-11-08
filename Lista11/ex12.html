@@ -18,11 +18,33 @@
 </html>
 
 <script>
-    var filhos = []
-    var filhosRepetidos = []
+    var filhos = []        
+    var quantidadeFilhos   
 
     function cadastrar() {
+      quantidadeFilhos = filhos.length
 
-     for (var i = 0; i <)
-     }
+        for (var i = 0; i < quantidadeFilhos; i++) {
+            if (filhos[i] == input_filhos.value) {
+                alert(`Não pode mais de 1 filho com o mesmo nome!`)
+                break
+            }
+        }
+
+        if (filhos[i] != input_filhos.value) {
+            filhos.push(input_filhos.value)
+        }
+
+    }
+
+    function atualizar() {
+        mensagem.innerHTML = ""
+        quantidadeFilhos = filhos.length
+
+        mensagem.innerHTML += ` Você tem ${quantidadeFilhos} filhos. <br> 
+
+           Seu custo mensal será aproximadamente R$${quantidadeFilhos * 3000} se colocá-los em escola particular ou R$${quantidadeFilhos * 1500} se eles estudarem em escola pública. 
+
+`
+    }
 </script>
