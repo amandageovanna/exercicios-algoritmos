@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Nome do produto
+    <input id="input_nomeProduto"> <br>
+    Preço de compra
+    <input id="input_precoCompra">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="relatorio()">Relatório de Estoque</button>
+    <div id="mensagem1"></div>
+    <div id="mensagem2"></div>
+
+</body>
+
+</html>
+
+<script>
+    var nomeProduto = []
+    var precoCompra = []
+
+    function cadastrar() {
+        nomeProduto.push(input_nomeProduto.value)
+        precoCompra.push(Number(input_precoCompra.value))
+
+    }
+
+    function relatorio() {
+        var media = 0;
+        var soma = 0;
+        var produtoMaisCaro = 0;
+        var produtoMaisBarato = 0;
+        var cara = precoCompra[0]
+        var barata = 0
+
+        mensagem1.innerHTML = `<br> Total de produtos: ${nomeProduto.length} <br> <br>`
+
+        for (var pos = 0; pos < nomeProduto.length; pos++) {
+            mensagem1.innerHTML += `Produto ${pos + 1}: ${nomeProduto[pos]} <br>
+            Preço de compra: R$${precoCompra[pos]}. <br>
+            Vender por R$${(precoCompra[pos]) * 1.25}  <br> <br>`
+
+
+            if (cara < precoCompra[pos]) {
+                cara = precoCompra[pos]
+                produtoMaisCaro = pos
+            }
+
+            if (barata > precoCompra[pos]) {
+                barata = precoCompra[pos]
+                produtoMaisBarato = pos
+            }
+
+            soma += Number(precoCompra[pos])
+
+        }
+
+        media = soma / precoCompra.length * 1.25
+
+        mensagem2.innerHTML +=
+            `Produto mais caro: ${nomeProduto[produtoMaisCaro]}  <br>
+            Produto mais barato: ${nomeProduto[produtoMaisBarato]}<br>
+            A soma dos preços de compra dos produtos: ${soma} <br>
+            A média de preço de venda dos produtos. ${media} <br>`
+
+
+
+    }
+
+
+</script>
