@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Digite um número qualquer:
+    <input id="input_numero">
+    <button onclick="analisar()">Analisar historico</button>
+    <div id="mensagem"></div>
+    
+</body>
+
+</html>
+
+<script>
+
+    var numeroQualquer = []
+
+
+    function analisar() {
+        mensagem.innerHTML = "";
+        var numero = Number(input_numero.value);
+        numeroQualquer.push(numero);
+
+        for (var posicao = 0; posicao < numeroQualquer.length; posicao++) {
+            var numeroAtual = numeroQualquer[posicao];
+
+            var maior = numeroQualquer[0];
+            var menor = numeroQualquer[0];
+
+            mensagem.innerHTML += `${posicao + 1}º Número: ${numeroAtual} <br>`
+
+            if (numeroAtual > maior) {
+                maior = numeroAtual
+            }
+
+            if (numeroAtual < menor) {
+                menor = numeroAtual
+            }
+        }
+
+        mensagem.innerHTML += `<br> Maior: ${maior} <br>`
+        mensagem.innerHTML += `Menor: ${menor} <br>`
+    }
+
+</script>
