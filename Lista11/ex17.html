@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> Análise de performance de Alunos - Registro</h1>
+    <span> Entre com o nome do aluno:</span> <input id="input_nome">
+    <span>Entre com a nota do aluno:</span> <input id="input_nota">
+    <button onclick="registrar()">Registrar</button>
+    <button onclick="analisar()">Analisar</button>
+    <div id="mensagem"></div>
+    <div id="mensagem2"></div>
+    <div id="mensagem3"></div>
+
+</body>
+
+
+</html>
+
+<script>
+
+    var listaAlunos = []
+    var listaNotas = []
+    var alunosPesquisados = []
+
+    function registrar() {
+        var nomeAlunos = input_nome.value;
+        var notaAlunos = Number(input_nota.value);
+
+        var tamanhoAlunos = listaAlunos.length;
+        var tamanhoNotas = Number(listaNotas.length);
+
+        mensagem.innerHTML = ``
+
+        if (nomeAlunos == '') {
+            alert(`Nome precisa estar preenchido`)
+        } else {
+            listaAlunos.push(nomeAlunos);
+        }
+
+        if (notaAlunos < 0 || notaAlunos > 10 || notaAlunos == '') {
+            alert(`Nota precisa estar entre 0 e 10`)
+        } else {
+            listaNotas.push(notaAlunos);
+        }
+
+        for (var posicao = tamanhoAlunos; posicao >= 0; posicao--) {
+            mensagem.innerHTML += `<br> <b>Aluno:</b> ${listaAlunos[posicao]} <b> Nota: </b> ${listaNotas[posicao]}`
+        }
+
+
+    }
+
+
+    function analisar() {
+        mensagem.innerHTML = ""
+
+        mensagem2.innerHTML = ` 
+        <h1> Análise de performance de Alunos - Pesquisa </h1>
+        <label for="input_de">Entre com o intervalo de notas:</label>
+          <input id="input_de" placeholder="De">
+          <input id="input_ate" placeholder="Até">
+           <br><br>
+          <button onclick="pesquisar()">Pesquisar</button>          
+          `
+
+    }
+
+    function pesquisar() {
+        var de = Number(input_de.value)
+        var ate = Number(input_ate.value)
+        var tamanhoAlunos = listaAlunos.length - 1;
+        var tamanhoNotas = Number(listaNotas.length - 1);
+        var maiorNota = listaNotas[0];
+        var menorNota = listaNotas[0];
+        
+
+        mensagem3.innerHTML = ""
+
+        if (de < 0 || de > 10
+            && ate < 0 || ate > 10
+            && de > ate) {
+            mensagem3.innerHTML += `Erro! Intervalo precisa estar de 0 até 10`
+        } else {
+            for (var pos = 0; pos < tamanhoNotas; pos++) {
+                var numeroAtual = listaNotas[pos]
+
+                if (listaNotas[pos] >= de && listaNotas[pos] <= ate) {
+                    alunosPesquisados.push(listaNotas[pos] && listaAlunos[pos])
+                    mensagem3.innerHTML += `<br> O aluno ${listaAlunos[pos]} ficou com a nota ${listaNotas[pos]}`
+
+                    if (numeroAtual > maiorNota) {
+                        maiorNota = numeroAtual
+                    }
+
+                    if (numeroAtual < menorNota) {
+                        menorNota = numeroAtual
+                    }
+                }
+
+            }
+        }
+
+        mensagem3.innerHTML += ` <br> Total de alunos registrados: ${listaAlunos.length} <br>
+
+           Total de alunos listado: ${alunosPesquisados.length} <br>
+
+           Maior Nota: ${maiorNota} <br>
+
+           Menor Nota:${menorNota}  <br>
+
+           Média da Nota: 99,9  <br>`
+
+    }
+</script>

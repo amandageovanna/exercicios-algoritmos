@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h1> Análise de performance de Alunos - Pesquisa </h1>
+<label for="input_de">Entre com o intervalo de notas:</label>
+<input id="input_de" placeholder="De">
+<input id="input_ate" placeholder="Até">
+<br><br>
+<button onclick="Pesquisar()">Pesquisar</button>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    var listaAlunos = []
+    var listaNotas = []
+    var alunosPesquisados = []
+
+    function pesquisar() {
+        var de = Number(input_de.value)
+        var ate = Number(input_ate.value)
+        var tamanhoAlunos = listaAlunos.length - 1;
+        var tamanhoNotas = Number(listaNotas.length - 1);
+
+
+        if (de < 0 || de > 10
+            && ate < 0 || ate > 10
+            && de > ate) {
+            mensagem3.innerHTML = `Erro! Intervalo precisa estar de 0 até 10`
+        } else {
+            for (var pos = 0; pos < tamanhoNotas; pos++) {
+                if (listaNotas[pos] >= de && listaNotas[pos] <= ate) {
+                    // alunosPesquisados.push(listaNotas[pos] && listaAlunos[pos])   
+                    mensagem3.innerHTML += `O aluno ${listaAlunos[pos]} ficou com a nota ${listaNotas[pos]}`
+                }
+
+            }
+        }
+
+    }
+</script>
