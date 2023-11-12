@@ -8,13 +8,15 @@
 </head>
 
 <body>
-    <h1> Análise de performance de Alunos - Registro</h1>
-    <span> Entre com o nome do aluno:</span> <input id="input_nome">
-    <span>Entre com a nota do aluno:</span> <input id="input_nota">
-    <button onclick="registrar()">Registrar</button>
-    <button onclick="analisar()">Analisar</button>
-    <div id="mensagem"></div>
-    <div id="mensagem2"></div>
+    <div id="mensagem">
+        <h1> Análise de performance de Alunos - Registro</h1>
+        <span> Entre com o nome do aluno:</span> <input id="input_nome">
+        <span>Entre com a nota do aluno:</span> <input id="input_nota">
+        <button onclick="registrar()">Registrar</button>
+        <button onclick="analisar()">Analisar</button>
+        <div id="mensagem2"></div>
+    </div>
+
     <div id="mensagem3"></div>
 
 </body>
@@ -26,7 +28,7 @@
 
     var listaAlunos = []
     var listaNotas = []
-    var alunosPesquisados = []
+
 
     function registrar() {
         var nomeAlunos = input_nome.value;
@@ -35,7 +37,7 @@
         var tamanhoAlunos = listaAlunos.length;
         var tamanhoNotas = Number(listaNotas.length);
 
-        mensagem.innerHTML = ``
+        mensagem2.innerHTML = ""
 
         if (nomeAlunos == '') {
             alert(`Nome precisa estar preenchido`)
@@ -50,7 +52,7 @@
         }
 
         for (var posicao = tamanhoAlunos; posicao >= 0; posicao--) {
-            mensagem.innerHTML += `<br> <b>Aluno:</b> ${listaAlunos[posicao]} <b> Nota: </b> ${listaNotas[posicao]}`
+            mensagem2.innerHTML += `<br> <b>Aluno:</b> ${listaAlunos[posicao]} <b> Nota: </b> ${listaNotas[posicao]}`
         }
 
 
@@ -58,27 +60,27 @@
 
 
     function analisar() {
-        mensagem.innerHTML = ""
-
-        mensagem2.innerHTML = ` 
+        mensagem.innerHTML = ` 
         <h1> Análise de performance de Alunos - Pesquisa </h1>
         <label for="input_de">Entre com o intervalo de notas:</label>
-          <input id="input_de" placeholder="De">
-          <input id="input_ate" placeholder="Até">
-           <br><br>
-          <button onclick="pesquisar()">Pesquisar</button>          
-          `
+        <input id="input_de" placeholder="De">
+        <input id="input_ate" placeholder="Até">
+        <br><br>
+        <button onclick="pesquisar()">Pesquisar</button>          
+        `
 
     }
 
     function pesquisar() {
         var de = Number(input_de.value)
         var ate = Number(input_ate.value)
-        var tamanhoAlunos = listaAlunos.length - 1;
-        var tamanhoNotas = Number(listaNotas.length - 1);
-        var maiorNota = listaNotas[0];
-        var menorNota = listaNotas[0];
-        
+        var tamanhoAlunos = listaAlunos.length;
+        var tamanhoNotas = Number(listaNotas.length);
+
+        var alunosPesquisados = []
+        var notasAlunosPesquisados = []
+
+
 
         mensagem3.innerHTML = ""
 
@@ -91,14 +93,19 @@
                 var numeroAtual = listaNotas[pos]
 
                 if (listaNotas[pos] >= de && listaNotas[pos] <= ate) {
-                    alunosPesquisados.push(listaNotas[pos] && listaAlunos[pos])
+                    alunosPesquisados.push(listaAlunos[pos])
+                    notasAlunosPesquisados.push(listaNotas[pos])
+
                     mensagem3.innerHTML += `<br> O aluno ${listaAlunos[pos]} ficou com a nota ${listaNotas[pos]}`
+
+                    var maiorNota = listaNotas[0];
+                    var menorNota = notasAlunosPesquisados[0];
 
                     if (numeroAtual > maiorNota) {
                         maiorNota = numeroAtual
                     }
 
-                    if (numeroAtual < menorNota) {
+                    if (numeroAtual <= menorNota) {
                         menorNota = numeroAtual
                     }
                 }
@@ -106,15 +113,24 @@
             }
         }
 
-        mensagem3.innerHTML += ` <br> Total de alunos registrados: ${listaAlunos.length} <br>
+        var soma = 0
 
-           Total de alunos listado: ${alunosPesquisados.length} <br>
+        for (var i = 0; i < notasAlunosPesquisados.length; i++) {
+            soma += notasAlunosPesquisados[i]
+        }
 
-           Maior Nota: ${maiorNota} <br>
+        media = soma / alunosPesquisados.length
 
-           Menor Nota:${menorNota}  <br>
+        mensagem3.innerHTML += ` <br><br>
+           <b>Total de alunos registrados:</b>  ${listaAlunos.length} <br>
 
-           Média da Nota: 99,9  <br>`
+           <b>Total de alunos listado:</b> ${alunosPesquisados.length} <br>
+
+           <b>Maior Nota:</b> ${maiorNota} <br>
+
+           <b>Menor Nota:</b>${menorNota}  <br>
+
+           <b>Média da Nota:</b> ${media}  <br>`
 
     }
 </script>
